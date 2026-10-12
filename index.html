@@ -9,7 +9,7 @@ button:hover{transform:translateY(-1px)}button:active{transform:translateY(3px);
 button:focus-visible,a:focus-visible{outline:4px solid var(--lav);outline-offset:2px}
 button:disabled{opacity:.5;cursor:not-allowed}
 #bar{display:flex;gap:8px;align-items:center;padding:8px 12px;background:#0b0e29;flex-wrap:wrap;position:sticky;top:0;z-index:5}
-#bar button{padding:6px 10px;font-size:14px}#bar .sp{flex:1}
+#bar button{padding:6px 10px;font-size:14px}#bar .sp{flex:1}#bar .st{flex:1 1 100%;order:5;font-size:13px;color:var(--butter)}@media(min-width:700px){#bar .st{flex:0 1 auto;order:0}}
 .page{max-width:900px;margin:0 auto;padding:18px;text-align:center}
 .sky{background:radial-gradient(#fff 1px,transparent 1.5px) 0 0/60px 60px,linear-gradient(#12163a,#3b2a6e 70%,#d7263d);min-height:calc(100vh - 44px)}
 .hero{position:relative;height:150px;margin:20px 0;overflow:hidden}
@@ -42,7 +42,7 @@ canvas{display:block;margin:8px auto;max-width:100%;border:4px solid var(--cream
 .dpad button{height:52px;font-size:20px}
 .opt{display:block;width:100%;margin:8px 0;text-align:left}
 .ov{position:fixed;inset:0;background:#12163aee;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:20;text-align:center;padding:20px}
-#cf{position:fixed;inset:0;pointer-events:none;z-index:30}
+#cf{position:fixed;left:0;top:0;width:100vw;height:100vh;margin:0;border:0;background:transparent;pointer-events:none;z-index:30}
 .fade{opacity:0;animation:fi 1.2s forwards}@keyframes fi{to{opacity:1}}
 .letter{white-space:pre-line;font-size:16px;line-height:1.6;background:var(--cream);color:var(--night);padding:20px;text-align:left;border:4px solid var(--pink)}
 .loop{position:relative;height:220px;overflow:hidden;background:linear-gradient(#ffb36b,#d7263d);margin:12px 0;border:4px solid var(--cream)}
