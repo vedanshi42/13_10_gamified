@@ -1,0 +1,58 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rish.exe — 8 Years, Still My Player 2</title>
+<style>
+:root{--cream:#fff4dc;--butter:#ffd966;--cherry:#d7263d;--pink:#f4a6b8;--lav:#b8a9e8;--night:#12163a}
+*{box-sizing:border-box}body{margin:0;background:var(--night);color:var(--cream);font-family:"Courier New",monospace;min-height:100vh}
+h1,h2,h3{font-family:"Courier New",monospace;line-height:1.2}
+button{font:inherit;cursor:pointer;background:var(--butter);color:var(--night);border:3px solid var(--cream);border-radius:4px;padding:10px 14px;box-shadow:0 4px 0 var(--cherry);font-weight:700}
+button:hover{transform:translateY(-1px)}button:active{transform:translateY(3px);box-shadow:none}
+button:focus-visible,a:focus-visible{outline:4px solid var(--lav);outline-offset:2px}
+button:disabled{opacity:.5;cursor:not-allowed}
+#bar{display:flex;gap:8px;align-items:center;padding:8px 12px;background:#0b0e29;flex-wrap:wrap;position:sticky;top:0;z-index:5}
+#bar button{padding:6px 10px;font-size:14px}#bar .sp{flex:1}
+.page{max-width:900px;margin:0 auto;padding:18px;text-align:center}
+.sky{background:radial-gradient(#fff 1px,transparent 1.5px) 0 0/60px 60px,linear-gradient(#12163a,#3b2a6e 70%,#d7263d);min-height:calc(100vh - 44px)}
+.hero{position:relative;height:150px;margin:20px 0;overflow:hidden}
+.hero .a,.hero .b{position:absolute;bottom:0;animation:meet 6s ease-in-out forwards}
+.hero .a{left:0}.hero .b{right:0;animation-name:meetb}
+@keyframes meet{to{left:38%}}@keyframes meetb{to{right:38%}}
+.panel{display:inline-block;text-align:left;border:3px solid var(--pink);background:#0b0e29cc;padding:10px 16px;margin:14px;font-size:14px}
+.big{font-size:20px;padding:16px 26px;animation:pulse 1.4s infinite}
+@keyframes pulse{50%{transform:scale(1.06)}}
+.couple{image-rendering:pixelated;animation:bob .6s steps(2) infinite}
+@keyframes bob{50%{transform:translateY(-3px)}}
+.map{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:22px 0;position:relative}
+.node{display:flex;flex-direction:column;align-items:center;gap:4px;min-height:110px;justify-content:center;background:var(--lav);position:relative}
+.node.done{background:var(--butter)}.node .ck{font-size:12px}
+.node.here::after{content:"▼ you are here";position:absolute;top:-20px;font-size:11px;color:var(--butter)}
+.side{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:10px 0}
+.egg{position:fixed;right:8px;bottom:8px;background:transparent;border:none;box-shadow:none;opacity:.35;font-size:22px}
+.stage{position:relative;height:300px;border:4px solid var(--cream);background:linear-gradient(#1d2260,#6b4fa8);overflow:hidden;margin:12px 0}
+.s2 .stage{background:linear-gradient(#222,#4a3a5a)}.s6 .stage{background:linear-gradient(#2a3a7a,#d7608a)}.s8 .stage{background:linear-gradient(#ff9f6b,#d7263d 60%,#4a2b5a)}
+.walker{position:absolute;bottom:6px;left:2%;transition:left .6s}
+.tok{position:absolute;font-size:15px;padding:6px 8px;background:var(--cream);animation:float 2.5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+.card{border:3px solid var(--pink);background:#0b0e29cc;padding:14px;margin:12px 0;text-align:left}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.mem{min-height:230px;background:var(--cream);color:var(--night);text-align:left;font-weight:400;display:block;box-shadow:4px 6px 0 var(--lav);transform:rotate(-1deg)}
+.mem:nth-child(even){transform:rotate(1.2deg)}.mem img{width:100%;max-height:110px;object-fit:cover}
+.mem small{color:var(--cherry)}
+canvas{display:block;margin:8px auto;max-width:100%;border:4px solid var(--cream);image-rendering:pixelated;touch-action:none;background:#0b0e29}
+.dpad{display:grid;grid-template-columns:repeat(3,60px);gap:6px;justify-content:center;margin:10px auto}
+.dpad button{height:52px;font-size:20px}
+.opt{display:block;width:100%;margin:8px 0;text-align:left}
+.ov{position:fixed;inset:0;background:#12163aee;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:20;text-align:center;padding:20px}
+#cf{position:fixed;inset:0;pointer-events:none;z-index:30}
+.fade{opacity:0;animation:fi 1.2s forwards}@keyframes fi{to{opacity:1}}
+.letter{white-space:pre-line;font-size:16px;line-height:1.6;background:var(--cream);color:var(--night);padding:20px;text-align:left;border:4px solid var(--pink)}
+.loop{position:relative;height:220px;overflow:hidden;background:linear-gradient(#ffb36b,#d7263d);margin:12px 0;border:4px solid var(--cream)}
+.loop .couple{position:absolute;bottom:10px;left:50%;margin-left:-40px}
+.loop .sun{position:absolute;right:15%;top:30px;width:70px;height:70px;background:var(--butter);border-radius:50%}
+.loop .hill{position:absolute;bottom:0;width:200%;height:40px;background:#4a2b5a;animation:slide 6s linear infinite}
+@keyframes slide{to{transform:translateX(-50%)}}
+.hint{opacity:.85}
+@media(max-width:600px){.map{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero .a{left:38%}.hero .b{right:38%}.fade{opacity:1}}
+</style></head><body>
+<div id="bar"></div><main id="app"></main><canvas id="cf"></canvas>
+<script src="content.js"></script><script src="app.js"></script></body></html>
